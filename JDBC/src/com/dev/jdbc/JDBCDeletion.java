@@ -17,7 +17,7 @@ public class JDBCDeletion {
 			DriverManager.registerDriver(div);
 			System.out.println("Driver Registered...");
 			
-			String url = "jdbc:mysql://localhost:3306/caps_htd"
+			String url = "jdbc:mysql://localhost:3306/caps_mumbai"
 					+ "?user=root&password=root";
 			con = DriverManager.getConnection(url);
 			System.out.println("Connection Established...");
@@ -29,8 +29,8 @@ public class JDBCDeletion {
 			String pass = sc.nextLine();
 			sc.close();
 			
-			String query = "delete from demo_tab"
-					+ " where regno=? and password=?";
+			String query = "delete from users_info"
+					+ " where user_id=? and password=?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, regno);
 			pstmt.setString(2,pass);
